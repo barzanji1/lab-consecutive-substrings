@@ -1,18 +1,16 @@
-function consecutiveSubstrings(string) {
-  // type your code here
-}
+function consecutiveSubstrings(str) {
+  const result = [];
 
-if (require.main === module) {
-  // add your own tests in here
-  console.log("Expecting: ['a', 'ab', 'abc', 'b', 'bc', 'c']");
-  console.log("=>", consecutiveSubstrings('abc'));
+  for (let i = 0; i < str.length; i++) {
+    let current = "";
 
-  console.log("");
+    for (let j = i; j < str.length; j++) {
+      current += str[j];
+      result.push(current);
+    }
+  }
 
-  console.log("Expecting: ['a']");
-  console.log("=>", consecutiveSubstrings('a'));
+  return result;
 }
 
 module.exports = consecutiveSubstrings;
-
-
